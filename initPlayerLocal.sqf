@@ -48,7 +48,7 @@ fnc_missionText = {
 
 // Turn on menu music
 0 fadeMusic 0;
-//playMusic "LeadTrack01_F_Jets";
+playMusic "LeadTrack01_F_Jets";
 5 fadeMusic 1;
 
 player createDiarySubject ["dro", "Dynamic Recon Ops"];
@@ -242,7 +242,7 @@ diag_log "DRO: Intro camera begun";
 
 playMusic "";
 0 fadeMusic 1;
-//playmusic [musicIntroSting, 0];
+playmusic [musicIntroSting, 0];
 
 sleep 3;
 cam camPreparePos _camEndPos;

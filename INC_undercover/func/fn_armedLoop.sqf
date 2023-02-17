@@ -60,7 +60,7 @@ if (!local _unit) exitWith {};
 		//Handles incognito status and checks on leaving vehicle
 		if ((uniform _unit in INC_incogUniforms) && {!(_unit getVariable ["INC_goneIncog",false])}) then {
 
-			_unit setVariable ["INC_goneIncog",true];
+			_unit setVariable ["INC_goneIncog", true, true];
 		} else {
 
 			if ((_unit getVariable ["INC_goneIncog",false]) && {!(uniform _unit in INC_incogUniforms)}) then {

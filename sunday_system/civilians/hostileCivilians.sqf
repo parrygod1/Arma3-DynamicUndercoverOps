@@ -28,7 +28,7 @@ _switchToHostile = {
 			_entities = _unit nearEntities _radius;
 			_targets = [];
 			{
-				if (side _x == playersSide) then {
+				if (side _x == playersSide && !(_x getVariable "INC_goneIncog")) then {
 					_targets pushBack _x;
 				};
 			} forEach _entities;
