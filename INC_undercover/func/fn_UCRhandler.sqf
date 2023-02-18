@@ -172,7 +172,7 @@ if (isPlayer _unit) then {
 
 	                _unit setVariable ["INC_trespassAlert",true];
 
-					hint "Trespassing security area";
+					hint "Inside security area";
 
 					[_unit,_activeMarker] spawn {
 						params ["_unit","_activeMarker"];

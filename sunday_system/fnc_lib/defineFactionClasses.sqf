@@ -212,7 +212,9 @@ _cfgVeh = configFile >> "CfgVehicles";
 			_checkSubcats = true;
 			if (_cfgName isKindOf 'Car') then {
 				if (_isCivFaction) exitWith {
-					civCarClasses pushBack _cfgName;					
+					civCarClasses pushBack _cfgName;	
+					pCarNoTurretClasses pushBackUnique _cfgName;
+					pCarClasses pushBackUnique _cfgName;
 				};
 				_edSubcat = ((_cfgVehName >> "editorSubcategory") call BIS_fnc_GetCfgData);
 				if (!isNil "_edSubcat") then {
@@ -227,7 +229,7 @@ _cfgVeh = configFile >> "CfgVehicles";
 								eAPCClasses pushBackUnique _cfgName;								
 							};
 						} else {
-							if (_isPlayerFaction) then {
+							if (_isPlayerFaction || _isCivFaction) then {
 								pCarClasses pushBackUnique _cfgName;
 								if (count ([_cfgName, false] call BIS_fnc_allTurrets) > 0) then {
 									pCarTurretClasses pushBackUnique _cfgName;
@@ -309,7 +311,7 @@ _cfgVeh = configFile >> "CfgVehicles";
 					_eVars = [eArtyClasses, eAAClasses, eTankClasses, eTankClasses, eHeliClasses, ePlaneClasses, eShipClasses, eUAVClasses];
 					{						
 						if ( [_x, ((_cfgVehName >> "editorSubcategory") call BIS_fnc_GetCfgData), false] call BIS_fnc_inString ) exitWith {
-							if (_isPlayerFaction) then {
+							if (_isPlayerFaction || _isCivFaction) then {
 								(_pVars select _forEachIndex) pushBackUnique _cfgName;
 							};
 							if (_isEnemyFaction) then {

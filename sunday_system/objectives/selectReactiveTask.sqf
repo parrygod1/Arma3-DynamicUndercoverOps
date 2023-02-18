@@ -59,7 +59,7 @@ switch (_selectedTask) do {
 		
 		_id = [_taskName, true, [_taskDesc, _taskTitle, ""], _hvtSpawnPos, "CREATED", 10, true, true, _taskType, true] call BIS_fnc_setTask;
 		_reactiveMkrName = format ["mkr%1", floor(random 100000)];
-		[_hvtChar, _id, _reactiveMkrName, nil, markerColorEnemy, 100] execVM "sunday_system\objectives\followingMarker.sqf";
+		[_hvtChar, _id, _reactiveMkrName, nil, markerColorEnemy, true, 100] execVM "sunday_system\objectives\followingMarker.sqf";
 		
 		//[(group u1), _taskName, [_taskDesc, _taskTitle, ""], _hvtSpawnPos, "CREATED", 10, true, _taskType, false] call BIS_fnc_taskCreate;
 		
@@ -144,7 +144,7 @@ switch (_selectedTask) do {
 			missionNamespace setVariable [(format ["%1_taskType", _taskName]), _taskType, true];
 			_id = [_taskName, true, [_taskDesc, _taskTitle, ""], _vehSpawnPos, "CREATED", 10, true, true, _taskType, true] call BIS_fnc_setTask;
 			
-			[_thisVeh, _id, nil, nil, markerColorEnemy, 200] execVM "sunday_system\objectives\followingMarker.sqf";			
+			[_thisVeh, _id, nil, nil, markerColorEnemy, false, 200] execVM "sunday_system\objectives\followingMarker.sqf";			
 			
 			//[(group u1), _taskName, [_taskDesc, _taskTitle, ""], _vehSpawnPos, "CREATED", 10, true, _taskType, false] call BIS_fnc_taskCreate;
 			
