@@ -28,7 +28,7 @@ if (random 1 > 0.75) then {
 
 // Marker
 _markerName = format["disarmMkr%1", floor(random 10000)];
-[_IED, _taskName, _markerName, _intelTaskName, "ColorRed", 150, "Cross"] execVM "sunday_system\objectives\staticMarker.sqf";
+[_IED, _taskName, _markerName, _intelTaskName, "ColorRed", false, 150, "Cross"] execVM "sunday_system\objectives\staticMarker.sqf";
 
 // Random ambush
 [_thisPos] spawn {

@@ -83,7 +83,7 @@ if (count _disarmTargetsUXO > 0) then {
 	
 } else {
 	
-	[(_disarmTargetsIED select 0), _taskName, _markerName, _intelSubTaskName, "ColorRed", 150, "Cross"] execVM "sunday_system\objectives\staticMarker.sqf";
+	[(_disarmTargetsIED select 0), _taskName, _markerName, _intelSubTaskName, "ColorRed", false, 150, "Cross"] execVM "sunday_system\objectives\staticMarker.sqf";
 	
 	_taskDesc = selectRandom [
 		(format ["A recently captured bomb maker revealed that roadside IEDs are being used in the %2 region. We know at least one is present in the area and we need to ensure it is made safe to reduce the potential for friendly and civilian casualties.", enemyFactionName, aoLocationName]),

@@ -336,7 +336,7 @@ if (_reconChance >= baseReconChance) then {
 	_subTasks pushBack [_intelSubTaskName, _subTaskDesc, _subTaskTitle, "documents"];
 	missionNamespace setVariable [(format ["%1_taskType", _intelSubTaskName]), "documents", true];
 	// Following marker
-	[_hvtChar, _taskName, _markerName, _intelSubTaskName] execVM "sunday_system\objectives\followingMarker.sqf";
+	[_hvtChar, _taskName, _markerName, _intelSubTaskName, markerColorEnemy, true] execVM "sunday_system\objectives\followingMarker.sqf";
 };
 
 // Evidence gathering subtask

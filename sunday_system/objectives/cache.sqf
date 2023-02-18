@@ -45,7 +45,7 @@ if (!isNil "_spawnedSquad") then {
 
 // Marker
 _markerName = format["cacheMkr%1", floor(random 10000)];
-[(_spawnedObjects select 0), _taskName, _markerName, _intelSubTaskName, markerColorEnemy, 400] execVM "sunday_system\objectives\followingMarker.sqf";
+[(_spawnedObjects select 0), _taskName, _markerName, _intelSubTaskName, markerColorEnemy, true, 400] execVM "sunday_system\objectives\followingMarker.sqf";
 
 // Create task
 _taskTitle = "Destroy Cache";

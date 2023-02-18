@@ -11,7 +11,7 @@ Please check each setting carefully otherwise the script may not function proper
 _undercoverUnitSide = missionNameSpace getVariable "playersSide";             //What side is/are the undercover unit(s) on? (Can be east, west or independent - only one side supported)
 
 //-------------------------General Settings-------------------------
-_debug = true;                         //Set to true for debug
+_debug = false;                         //Set to true for debug
 _fullAIfunctionality = true;            //Enable all checks on AI (may degrade performace very slightly for large groups, 15+)
 _easyMode = true;                       //Disguise checks will also reveal if the player's disguise is working or not
 

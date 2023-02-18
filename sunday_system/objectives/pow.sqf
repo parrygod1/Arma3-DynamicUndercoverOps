@@ -282,7 +282,7 @@ taskIntel pushBack [_taskName, uniform _powChar, _intelSubTaskName, "WEARABLE"];
 
 // Marker
 _markerName = format["powMkr%1", floor(random 10000)];
-[_powChar, _taskName, _markerName, _intelSubTaskName, markerColorPlayers] execVM "sunday_system\objectives\followingMarker.sqf";
+[_powChar, _taskName, _markerName, _intelSubTaskName, markerColorPlayers, true] execVM "sunday_system\objectives\followingMarker.sqf";
 
 // Create Task		
 _powName = ((configFile >> "CfgVehicles" >> powClass >> "displayName") call BIS_fnc_GetCfgData);

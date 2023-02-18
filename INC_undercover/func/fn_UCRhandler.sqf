@@ -172,6 +172,8 @@ if (isPlayer _unit) then {
 
 	                _unit setVariable ["INC_trespassAlert",true];
 
+					hint "Trespassing security area";
+
 					[_unit,_activeMarker] spawn {
 						params ["_unit","_activeMarker"];
 
@@ -182,6 +184,8 @@ if (isPlayer _unit) then {
 							!(_unit inArea _activeMarker);
 						};
 						_unit setVariable ["INC_trespassAlert",false];
+
+						hint "Out of security area";
 
 					};
 				};

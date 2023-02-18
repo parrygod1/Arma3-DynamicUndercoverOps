@@ -116,7 +116,7 @@ if (!isNil "_spawnedSquad") then {
 
 // Marker
 _markerName = format["mortarMkr%1", floor(random 10000)];
-[_mortar, _taskName, _markerName, _intelSubTaskName, markerColorEnemy, 500] execVM "sunday_system\objectives\followingMarker.sqf";
+[_mortar, _taskName, _markerName, _intelSubTaskName, markerColorEnemy, true, 500] execVM "sunday_system\objectives\followingMarker.sqf";
 
 // Create intel subtasks	
 _subTaskDesc = format ["Collect all intelligence on the target to narrow down your search. Collecting intel will reduce the size of your search radius. Check the bodies of %1 team leaders, search marked intel locations and complete any intel tasks.", enemyFactionName];

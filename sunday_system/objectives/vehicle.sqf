@@ -273,7 +273,7 @@ if (isMultiplayer) then {
 
 // Marker
 _markerName = format["vehMkr%1", floor(random 10000)];
-[_thisVeh, _taskName, _markerName, _intelSubTaskName, markerColorEnemy, 400] execVM "sunday_system\objectives\followingMarker.sqf";
+[_thisVeh, _taskName, _markerName, _intelSubTaskName, markerColorEnemy, false, 400] execVM "sunday_system\objectives\followingMarker.sqf";
 
 // Create intel subtasks	
 _subTaskDesc = format ["Collect all intelligence on the target to narrow down your search. Intel may reduce the size of your search radius and locate any positions they're moving through. Check the bodies of %1 team leaders, search marked intel locations and complete any intel tasks.", enemyFactionName];

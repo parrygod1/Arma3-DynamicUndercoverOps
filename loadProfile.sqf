@@ -38,6 +38,6 @@ dynamicSim = profileNamespace getVariable ["DRO_dynamicSim", 0];
 publicVariable "dynamicSim";
 spawnMusicEnabled = profileNamespace getVariable ["DRO_spawnMusicEnabled", 0];
 publicVariable "spawnMusicEnabled";
-hostileCivsEnabled = profileNamespace getVariable ["DRO_hostileCivsEnabled", 0];
+hostileCivsEnabled = profileNamespace getVariable ["DRO_hostileCivsEnabled", 1];
 publicVariable "hostileCivsEnabled";
 diag_log "DRO: variables loaded from profile";

@@ -1,4 +1,4 @@
-params ["_object", "_task", "_customMarkerName", "_subTaskName", ["_markerColor", markerColorEnemy], ["_markerSize", 800], ["_markerBrush", "BDiagonal"]];
+params ["_object", "_task", "_customMarkerName", "_subTaskName", ["_markerColor", markerColorEnemy], ["_useTrespassMarker", false], ["_markerSize", 800], ["_markerBrush", "BDiagonal"]];
 
 _followMarkerName = if (!isNil "_customMarkerName") then {	
 	_customMarkerName
@@ -11,10 +11,19 @@ _extendPos = [(getPos _object), _shiftAmount, (random 360)] call BIS_fnc_relPos;
 _followMarker = createMarker [_followMarkerName, _extendPos];
 _followMarker setMarkerShape "ELLIPSE";		
 _followMarker setMarkerBrush _markerBrush;
-_followMarker setMarkerSize [_markerSize, _markerSize];
+_followMarker setMarkerSize [_markerSize , _markerSize];
 _followMarker setMarkerAlpha 1;
 _followMarker setMarkerColor _markerColor;
 _object setVariable ["followMarker", _followMarker, true];
+
+_trespassMarker = nil;
+
+if (_useTrespassMarker) then {
+	_trespassMarker = createMarker ["INC_tre_" + _followMarkerName, (getPos _object)];
+	_trespassMarker setMarkerSize [10, 10];
+	_trespassMarker setMarkerShape "ELLIPSE";
+	_trespassMarker setMarkerAlpha 0;
+};
 
 diag_log format ["DRO: Follow marker created for %1 and attached to %2 - size: %3", _task, _object, getMarkerSize _followMarker];
 
@@ -42,6 +51,9 @@ while {((getMarkerSize _followMarker) select 0) > 0} do {
 			_shiftAmount = [0, ((((getMarkerSize _followMarker) select 0)-30) max 0)] call BIS_fnc_randomNum;
 			_extendPos = [(getPos _object), _shiftAmount, (random 360)] call BIS_fnc_relPos;
 			_followMarker setMarkerPos _extendPos;
+			if (!isNil _trespassMarker) then {
+				_trespassMarker setMarkerPos (getPos _object);
+			};
 			[_task, _extendPos] call BIS_fnc_taskSetDestination;
 			for "_i" from 1 to 20 do {
 				sleep 0.1;
