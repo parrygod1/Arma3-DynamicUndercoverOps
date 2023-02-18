@@ -104,6 +104,16 @@ sun_switchLookup = {
 					_return pushBack numObjectives;			
 					_return pushBack ["RANDOM", "1", "2", "3"];					
 				};
+				case 2500: {
+					_return pushBack "spawnMusicEnabled";
+					_return pushBack spawnMusicEnabled;			
+					_return pushBack ["ENABLED", "DISABLED"];					
+				};
+				case 2505: {
+					_return pushBack "hostileCivsEnabled";
+					_return pushBack hostileCivsEnabled;			
+					_return pushBack ["ENABLED", "DISABLED"];					
+				};
 			};			
 		};
 		case "LOBBY": {

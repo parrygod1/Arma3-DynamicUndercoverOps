@@ -6,10 +6,6 @@ class EditorData
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=513;
-	mods[]=
-	{
-		"3denEnhanced"
-	};
 	class ItemIDProvider
 	{
 		nextID=1194;
@@ -25,9 +21,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={14313.696,15.922679,13059.813};
-		dir[]={0.10714209,-0.63294542,-0.76674682};
-		up[]={0.087594174,0.77419645,-0.62685496};
-		aside[]={-0.99037766,0,-0.13839136};
+		dir[]={0.12915438,-0.486716,-0.86395985};
+		up[]={0.071960121,0.87356025,-0.48136699};
+		aside[]={-0.98900998,-3.7252903e-009,-0.14784828};
 	};
 };
 binarizationWanted=0;
@@ -148,7 +144,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category1
+	class Category0
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -307,7 +303,7 @@ class CustomAttributes
 		};
 		nAttributes=11;
 	};
-	class Category2
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0

@@ -6,7 +6,8 @@ menuSliderArray = [
 	["SCENARIO", 2000],
 	["ENVIRONMENT", 3000],	
 	["OBJECTIVES", 4000],
-	["ADVANCED FACTIONS", 5000]
+	["ADVANCED FACTIONS", 5000],
+	["ADDITIONAL SETTINGS", 7000]
 ];
 menuSliderCurrent = 0;
 

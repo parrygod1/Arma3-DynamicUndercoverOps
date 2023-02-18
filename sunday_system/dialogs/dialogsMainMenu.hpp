@@ -989,6 +989,87 @@ class sundayDialog {
 				};
 			};
 		};
+
+		class AddSettingsGroup: RscControlsGroup {
+			idc = 7000;			
+			x = -0.4 * safezoneW + safezoneX;
+			y = "safezoneY + (20 * pixelGridNoUIScale * pixelH)";
+			w = "26 * pixelGridNoUIScale * pixelW";			
+			h = "safezoneH - (20 * pixelGridNoUIScale * pixelH)";
+			class Controls {		
+				class sundayTextAddSettings: sundayTextMT
+				{
+					idc = 3713;			
+					text = "These are additional settings for both DRO and Incognito mod";
+					x = "1 * pixelGridNoUIScale * pixelW";
+					y = "0 * pixelGridNoUIScale * pixelH";	
+					w = "24 * pixelGridNoUIScale * pixelW";	
+					h = "1 * pixelGridNoUIScale * pixelH";
+				};
+				class sundayTitleAddSettings: sundayText
+				{
+					idc = 3714;
+					text = "Dynamic Recon Ops";
+					x = "1 * pixelGridNoUIScale * pixelW";
+					y = "2 * pixelGridNoUIScale * pixelH";	
+					w = "24 * pixelGridNoUIScale * pixelW";	
+					h = "1.5 * pixelGridNoUIScale * pixelH";
+				};
+				class MusicSwitchButton: RscControlsGroupNoScrollbars {
+					idc = 2500;	
+					y = "4 * pixelGridNoUIScale * pixelH";					
+					class Controls {
+						class SwitchPic: sundaySelButtonPic
+						{			
+							idc = 2501;							
+							text = "\a3\ui_f\data\igui\cfg\simpletasks\types\Radio_ca.paa";							
+						};
+						class SwitchTitle: sundaySelButtonTitle
+						{			
+							idc = 2502;	
+							text = "ENABLE MUSIC";
+						};
+						class SwitchText: sundaySelButtonSelect
+						{			
+							idc = 2503;
+							text = "";
+						};
+						class SwitchButton: sundaySelButton {
+							idc = 2504;
+							action = "['MAIN', 2500] call sun_switchButton";
+							tooltip = "When enabled, music will be played when the operation starts.";
+						};
+						
+					};		
+				};
+				class HostileCiviliansSwitchButton: RscControlsGroupNoScrollbars {
+					idc = 2505;	
+					y = "8 * pixelGridNoUIScale * pixelH";					
+					class Controls {
+						class SwitchPic: sundaySelButtonPic
+						{			
+							idc = 2506;							
+							text = "\a3\ui_f\data\igui\cfg\simpletasks\types\attack_ca.paa";							
+						};
+						class SwitchTitle: sundaySelButtonTitle
+						{			
+							idc = 2507;	
+							text = "HOSTILE CIVILIANS";
+						};
+						class SwitchText: sundaySelButtonSelect
+						{			
+							idc = 2508;
+							text = "";
+						};
+						class SwitchButton: sundaySelButton {
+							idc = 2509;
+							action = "['MAIN', 2505] call sun_switchButton";
+							tooltip = "When enabled, civilians have a chance of becoming hostile to players. They will not attack incognito players.";
+						};
+						
+					};		
+				};
+			};
+		};
 	};
-	
 };
