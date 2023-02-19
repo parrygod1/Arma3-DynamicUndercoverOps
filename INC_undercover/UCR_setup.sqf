@@ -20,7 +20,7 @@ _racProfFacCiv = 1;                     //(Number) Multiplies the effect of raci
 _racProfFacEny = 1;                     //(Number) Multiplies the effect of racial profiling. Lower this number to simulate more multicultural enemy forces
 
 _regEnySide = missionNameSpace getVariable "enemySide";                     //Units of this side will be classed as regular enemies and will share information about detected units across entire map (Side: can be east, west, independent) - if you don't need this, use sideEmpty.
-_regBarbaric = false;                   //(Bool - true or false) Will this side lash out on civilians if it takes casualties and doesn't know the attacker?
+_regBarbaric = (profileNamespace getVariable "barbaricEnabled") == 1;                   //(Bool - true or false) Will this side lash out on civilians if it takes casualties and doesn't know the attacker?
 _regDetectRadius = 10;                  //Default detection radius for regular troops (this will expand and contract based on weather, time of day, and how the undercover unit is acting - civilians within this radius will be under much more scrutinty)
 
 _asymEnySide = sideEmpty;               //Units of this side will be classed as asymetric enemies (Side: can be east, west, independent) - if you don't need this, use sideEmpty.

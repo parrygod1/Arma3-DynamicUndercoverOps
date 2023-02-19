@@ -37,7 +37,7 @@ while {stealthActive} do {
 		if (alive _thisLeader) then {
 			{
 				_target = _x;
-				_knowsAbout = ((group _thisLeader) knowsAbout _target);
+				_knowsAbout = ((group _thisLeader) knowsAbout _target && ((_target getVariable ['INC_isCompromised', true] == true)));
 				if (_knowsAbout >= 1.5) exitWith {
 					alertableLeaders = alertableLeaders - [_thisLeader];
 					[_thisLeader, _target, _knowsAbout] spawn {

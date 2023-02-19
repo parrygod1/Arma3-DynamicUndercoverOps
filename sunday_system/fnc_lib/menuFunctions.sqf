@@ -114,6 +114,11 @@ sun_switchLookup = {
 					_return pushBack hostileCivsEnabled;			
 					_return pushBack ["ENABLED", "DISABLED"];					
 				};
+				case 2510: {
+					_return pushBack "barbaricEnabled";
+					_return pushBack barbaricEnabled;			
+					_return pushBack ["ENABLED", "DISABLED"];					
+				};
 			};			
 		};
 		case "LOBBY": {

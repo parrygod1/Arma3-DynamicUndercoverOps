@@ -21,17 +21,22 @@ for "_i" from 0 to 3 do {
 
 // Marker
 _markerName = format["barricadeMkr%1", floor(random 10000)];
-_markerBuilding = createMarker [_markerName, _thisPos];			
+_markerBuilding = createMarker [_markerName, _thisPos];
 _markerBuilding setMarkerShape "ICON";
 _markerBuilding setMarkerType "mil_end";
-_markerBuilding setMarkerColor "ColorCivilian";		
+_markerBuilding setMarkerColor "ColorCivilian";
 _markerBuilding setMarkerAlpha 0;
+
+_trespassMarker = createMarker ["INC_tre_" + _markerName, _thisPos];
+_trespassMarker setMarkerSize [50, 50];
+_trespassMarker setMarkerShape "ELLIPSE";
+_trespassMarker setMarkerAlpha 0;
 
 // Create task
 _taskTitle = "Construct Barricade";
 _taskDesc = selectRandom [
 	(format ["%1 forces have been transporting troops and supplies through %2 and command has tasked you with impeding their progress by building a blockade across one of the roads.", enemyFactionName, aoLocationName]),
-	(format ["We have intelligence that %1 may consider moving into %2 soon. With that in mind we need road barricades built to better defend the area. Use what you find to build a blockade.", enemyFactionName, aoLocationName])	
+	(format ["We have intelligence that %1 may consider moving into %2 soon. With that in mind we need road barricades built to better defend the area. Use what you find to build a blockade.", enemyFactionName, aoLocationName])
 ];
 
 _taskType = "use";

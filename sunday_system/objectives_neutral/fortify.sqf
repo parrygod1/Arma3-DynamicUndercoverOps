@@ -47,6 +47,11 @@ _markerText = format ["OP %1", ([FOBNames] call sun_selectRemove)];
 _markerFortify setMarkerText _markerText;
 _markerFortify setMarkerColor markerColorPlayers;		
 _markerFortify setMarkerAlpha 0;
+
+_trespassMarker = createMarker ["INC_tre_" + _markerName, _thisPos];
+_trespassMarker setMarkerSize [50, 50];
+_trespassMarker setMarkerShape "ELLIPSE";
+_trespassMarker setMarkerAlpha 0;
 	
 _taskDesc = selectRandom [
 	(format ["As we prepare to make a move into %2 you are tasked with constructing an operating post in the area. Move to the marked location and fortify it.", enemyFactionName, aoLocationName]),

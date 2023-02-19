@@ -1015,7 +1015,7 @@ class sundayDialog {
 					w = "24 * pixelGridNoUIScale * pixelW";	
 					h = "1.5 * pixelGridNoUIScale * pixelH";
 				};
-				class MusicSwitchButton: RscControlsGroupNoScrollbars {
+				/*class MusicSwitchButton: RscControlsGroupNoScrollbars {
 					idc = 2500;	
 					y = "4 * pixelGridNoUIScale * pixelH";					
 					class Controls {
@@ -1041,10 +1041,10 @@ class sundayDialog {
 						};
 						
 					};		
-				};
+				};*/
 				class HostileCiviliansSwitchButton: RscControlsGroupNoScrollbars {
 					idc = 2505;	
-					y = "8 * pixelGridNoUIScale * pixelH";					
+					y = "4 * pixelGridNoUIScale * pixelH";					
 					class Controls {
 						class SwitchPic: sundaySelButtonPic
 						{			
@@ -1065,6 +1065,42 @@ class sundayDialog {
 							idc = 2509;
 							action = "['MAIN', 2505] call sun_switchButton";
 							tooltip = "When enabled, civilians have a chance of becoming hostile to players. They will not attack incognito players.";
+						};
+						
+					};		
+				};
+				class sundayTitleUCR: sundayText
+				{
+					idc = 3715;
+					text = "Undercover";
+					x = "1 * pixelGridNoUIScale * pixelW";
+					y = "2 * pixelGridNoUIScale * pixelH";	
+					w = "24 * pixelGridNoUIScale * pixelW";	
+					h = "11* pixelGridNoUIScale * pixelH";
+				};
+				class BarbaricSwitchButton: RscControlsGroupNoScrollbars {
+					idc = 2510;	
+					y = "11 * pixelGridNoUIScale * pixelH";					
+					class Controls {
+						class SwitchPic: sundaySelButtonPic
+						{			
+							idc = 2511;							
+							text = "\a3\ui_f\data\igui\cfg\simpletasks\types\attack_ca.paa";							
+						};
+						class SwitchTitle: sundaySelButtonTitle
+						{			
+							idc = 2512;	
+							text = "BARBARIC ENEMY";
+						};
+						class SwitchText: sundaySelButtonSelect
+						{			
+							idc = 2513;
+							text = "";
+						};
+						class SwitchButton: sundaySelButton {
+							idc = 2514;
+							action = "['MAIN', 2510] call sun_switchButton";
+							tooltip = "When enabled, enemy side will lash out on civilians if it takes casualties and doesn't know the attacker";
 						};
 						
 					};		

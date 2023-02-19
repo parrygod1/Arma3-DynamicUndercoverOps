@@ -186,8 +186,9 @@ if (count _travelPositions > 0) then {
 	_trgRelease setTriggerActivation ["ANY", "PRESENT", false];
 	_trgRelease setTriggerStatements [
 		"
-			({alive _x} count (thisTrigger getVariable 'allGuards') == 0) OR
-			(thisTrigger getVariable 'powChar') distance (leader (grpNetId call BIS_fnc_groupFromNetId)) < 20
+			(({alive _x} count (thisTrigger getVariable 'allGuards') == 0) OR
+			(thisTrigger getVariable 'powChar') distance (leader (grpNetId call BIS_fnc_groupFromNetId)) < 20) AND
+			(((leader (grpNetId call BIS_fnc_groupFromNetId)) getVariable ['INC_isCompromised', true]) == true)
 		",
 		"	
 			[(thisTrigger getVariable 'powChar'), 'MOVE'] remoteExec ['enableAI', (thisTrigger getVariable 'powChar')];			
@@ -362,7 +363,7 @@ _trgExtract setTriggerStatements [
 	"
 		(alive (thisTrigger getVariable 'powChar')) && 
 		!(vehicle (thisTrigger getVariable 'powChar') in thisList) && 
-		(thisTrigger getVariable 'powChar') in (units (grpNetId call BIS_fnc_groupFromNetId))
+		(thisTrigger getVariable 'powChar') in (units (grpNetId call BIS_fnc_groupFromNetId)) &&
 	",
 	"				
 		[(thisTrigger getVariable 'powChar')] joinSilent grpNull;

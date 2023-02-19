@@ -325,6 +325,9 @@ dro_sendProgressMessage = {
 					],
 					_playAudio
 				];
+
+				//Add rating for UCR civ recruitment
+				{ _x addRating 600 } forEach (units (grpNetId call BIS_fnc_groupFromNetId));
 			};		
 		};
 		case "REACTIVE_TASK": {	

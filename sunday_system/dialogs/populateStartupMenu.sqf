@@ -68,6 +68,10 @@ _index = lbAdd [2106, "3"];
 ["MAIN", 3030, false] call sun_switchButton;
 ["MAIN", 4010, false] call sun_switchButton;
 //["MAIN", 3020, false] call sun_switchButton;
+//Additional options
+//["MAIN", 2500, false] call sun_switchButton;
+["MAIN", 2505, false] call sun_switchButton;
+["MAIN", 2510, false] call sun_switchButton;
 
 /*
 lbAdd [2117, "Enabled"];

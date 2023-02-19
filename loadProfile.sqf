@@ -40,4 +40,6 @@ spawnMusicEnabled = profileNamespace getVariable ["DRO_spawnMusicEnabled", 0];
 publicVariable "spawnMusicEnabled";
 hostileCivsEnabled = profileNamespace getVariable ["DRO_hostileCivsEnabled", 1];
 publicVariable "hostileCivsEnabled";
+barbaricEnabled = profileNamespace getVariable ["DRO_barbaricEnabled", 0];
+publicVariable "barbaricEnabled";
 diag_log "DRO: variables loaded from profile";
