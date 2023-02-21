@@ -72,6 +72,7 @@ _index = lbAdd [2106, "3"];
 //["MAIN", 2500, false] call sun_switchButton;
 ["MAIN", 2505, false] call sun_switchButton;
 ["MAIN", 2510, false] call sun_switchButton;
+["MAIN", 2515, false] call sun_switchButton;
 
 /*
 lbAdd [2117, "Enabled"];
@@ -89,6 +90,11 @@ lbSetCurSel [2301, day];
 sliderSetRange [2041, 5, 17];
 sliderSetPosition [2041, aiMultiplier*10];
 ((findDisplay 52525) displayCtrl 2041) ctrlSetText format ["Enemy force size multiplier: x%1", profileNamespace getVariable ['DRO_aiMultiplier', 1]];
+
+sliderSetRange [2101, 0, 20];
+sliderSetPosition [2101, suspicionMultiplier*10];
+((findDisplay 52525) displayCtrl 2041) ctrlSetText format ["Enemy suspicion multiplier: x%1", profileNamespace getVariable ['DRO_suspicionMultiplier', 1]];
+
 
 
 sliderSetRange [2109, 0, 10];

@@ -37,6 +37,16 @@ if (!isNil "enemyIntelMarkers") then {
 };
 */
 
+[_object, _trespassMarker] spawn {
+	_object = _this select 0;
+	_trespassMarker = _this select 1;
+
+	while {alive _object && !(isNil _trespassMarker)} do {
+		sleep 1;
+		_trespassMarker setMarkerPos (getPos _object);
+	};
+};
+
 while {((getMarkerSize _followMarker) select 0) > 0} do {
 	sleep 10;
 	if (((getMarkerSize _followMarker) select 0) > 0) then {
@@ -51,9 +61,6 @@ while {((getMarkerSize _followMarker) select 0) > 0} do {
 			_shiftAmount = [0, ((((getMarkerSize _followMarker) select 0)-30) max 0)] call BIS_fnc_randomNum;
 			_extendPos = [(getPos _object), _shiftAmount, (random 360)] call BIS_fnc_relPos;
 			_followMarker setMarkerPos _extendPos;
-			if (!isNil _trespassMarker) then {
-				_trespassMarker setMarkerPos (getPos _object);
-			};
 			[_task, _extendPos] call BIS_fnc_taskSetDestination;
 			for "_i" from 1 to 20 do {
 				sleep 0.1;

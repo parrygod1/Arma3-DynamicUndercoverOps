@@ -1000,7 +1000,7 @@ class sundayDialog {
 				class sundayTextAddSettings: sundayTextMT
 				{
 					idc = 3713;			
-					text = "These are additional settings for both DRO and Incognito mod";
+					text = "These are additional settings for both DRO and Undercover mods";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "0 * pixelGridNoUIScale * pixelH";	
 					w = "24 * pixelGridNoUIScale * pixelW";	
@@ -1049,7 +1049,7 @@ class sundayDialog {
 						class SwitchPic: sundaySelButtonPic
 						{			
 							idc = 2506;							
-							text = "\a3\ui_f\data\igui\cfg\simpletasks\types\attack_ca.paa";							
+							text = "\a3\ui_f\data\igui\cfg\simpletasks\types\rifle_ca.paa";							
 						};
 						class SwitchTitle: sundaySelButtonTitle
 						{			
@@ -1064,7 +1064,7 @@ class sundayDialog {
 						class SwitchButton: sundaySelButton {
 							idc = 2509;
 							action = "['MAIN', 2505] call sun_switchButton";
-							tooltip = "When enabled, civilians have a chance of becoming hostile to players. They will not attack incognito players.";
+							tooltip = "When enabled, civilians have a chance of becoming hostile to players. They will not attack undercover players. 'Disabled' will completely disable this functionality.";
 						};
 						
 					};		
@@ -1076,16 +1076,16 @@ class sundayDialog {
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "2 * pixelGridNoUIScale * pixelH";	
 					w = "24 * pixelGridNoUIScale * pixelW";	
-					h = "11* pixelGridNoUIScale * pixelH";
+					h = "12.5* pixelGridNoUIScale * pixelH";
 				};
 				class BarbaricSwitchButton: RscControlsGroupNoScrollbars {
 					idc = 2510;	
-					y = "11 * pixelGridNoUIScale * pixelH";					
+					y = "10 * pixelGridNoUIScale * pixelH";					
 					class Controls {
 						class SwitchPic: sundaySelButtonPic
 						{			
 							idc = 2511;							
-							text = "\a3\ui_f\data\igui\cfg\simpletasks\types\attack_ca.paa";							
+							text = "\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa";							
 						};
 						class SwitchTitle: sundaySelButtonTitle
 						{			
@@ -1100,10 +1100,59 @@ class sundayDialog {
 						class SwitchButton: sundaySelButton {
 							idc = 2514;
 							action = "['MAIN', 2510] call sun_switchButton";
-							tooltip = "When enabled, enemy side will lash out on civilians if it takes casualties and doesn't know the attacker";
+							tooltip = "When enabled, enemy side has a chance to attack civilians if it takes casualties and doesn't know the attacker";
 						};
 						
 					};		
+				};
+				class RecruitmentSwitchButton: RscControlsGroupNoScrollbars {
+					idc = 2515;	
+					y = "14 * pixelGridNoUIScale * pixelH";					
+					class Controls {
+						class SwitchPic: sundaySelButtonPic
+						{			
+							idc = 2516;							
+							text = "\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa";							
+						};
+						class SwitchTitle: sundaySelButtonTitle
+						{			
+							idc = 2517;	
+							text = "CIVILIAN RECRUITMENT";
+						};
+						class SwitchText: sundaySelButtonSelect
+						{			
+							idc = 2518;
+							text = "";
+						};
+						class SwitchButton: sundaySelButton {
+							idc = 2519;
+							action = "['MAIN', 2515] call sun_switchButton";
+							tooltip = "When enabled, players have a chance to recruit civilians into their team";
+						};
+						
+					};		
+				};
+				class sundayTitleSuspicion: sundayText
+				{
+					idc = 2100;
+					text = "Enemy suspicion multiplier:";
+					x = "1.5 * pixelGridNoUIScale * pixelW";
+					y = "18 * pixelGridNoUIScale * pixelH";	
+					w = "24 * pixelGridNoUIScale * pixelW";	
+					h = "3 * pixelGridNoUIScale * pixelH";
+					colorText[] = {0.75,0.75,0.75,1};
+					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
+					font = "PuristaMedium";
+					tooltip = "Allows you to fine tune the suspicion level of enemies. 1 is default, 0 won't disable everything (e.g. drawing your gun will blow your cover).";
+				};
+				class sundaySliderSuspicion: sundaySlider
+				{
+					idc = 2101;
+					x = "1.5 * pixelGridNoUIScale * pixelW";
+					y = "21 * pixelGridNoUIScale * pixelH";	
+					w = "23 * pixelGridNoUIScale * pixelW";	
+					h = "1.5 * pixelGridNoUIScale * pixelH";					
+					onSliderPosChanged = "_mult = ((_this select 1)/10); _rounded = round (_mult * (10 ^ 1)) / (10 ^ 1); ((findDisplay 52525) displayCtrl 2100) ctrlSetText format ['Enemy suspicion multiplier: x%1', _rounded]; suspicionMultiplier = _rounded; publicVariable 'suspicionMultiplier'; profileNamespace setVariable ['DRO_suspicionMultiplier', _rounded];";
 				};
 			};
 		};

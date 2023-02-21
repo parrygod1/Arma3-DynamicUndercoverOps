@@ -122,13 +122,12 @@ if (!isNil "_thisLinked") then {
 	} forEach _thisLinked;
 };
 
-
-hostileCivsEnabled = if (civiliansEnabled == 2) then {true} else {
-	if (civiliansEnabled == 1) then {
+hostileCivsEnabled = if (civiliansEnabled == 2 && areHostileCivsEnabled == 1) then {true} else {
+	if (civiliansEnabled == 1 && areHostileCivsEnabled == 1) then {
 		if (random 1 > 0.5) then {
 			true
 		} else {false};
-	};
+	} else {false};
 };
 DRO_C_HWearables = [];
 if (hostileCivsEnabled) then {

@@ -63,7 +63,7 @@ extractHeliUsed = false;
 reinforceChance = 0.5;
 stealthActive = false;
 enemyCommsActive = true;
-hostileCivsEnabled = if (random 1 > 0.5 && (profileNamespace getVariable ["DRO_hostileCivsEnabled", 1]) == 1) then {true} else {false};
+hostileCivsEnabled = if (random 1 > 0.5) then {true} else {false};
 
 civDeathCounter = 0;
 publicVariable "civDeathCounter";

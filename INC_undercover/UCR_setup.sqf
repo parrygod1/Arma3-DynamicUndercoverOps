@@ -20,14 +20,14 @@ _racProfFacCiv = 1;                     //(Number) Multiplies the effect of raci
 _racProfFacEny = 1;                     //(Number) Multiplies the effect of racial profiling. Lower this number to simulate more multicultural enemy forces
 
 _regEnySide = missionNameSpace getVariable "enemySide";                     //Units of this side will be classed as regular enemies and will share information about detected units across entire map (Side: can be east, west, independent) - if you don't need this, use sideEmpty.
-_regBarbaric = (profileNamespace getVariable "barbaricEnabled") == 1;                   //(Bool - true or false) Will this side lash out on civilians if it takes casualties and doesn't know the attacker?
+_regBarbaric = (missionNamespace getVariable "barbaricEnabled") == 1;                   //(Bool - true or false) Will this side lash out on civilians if it takes casualties and doesn't know the attacker?
 _regDetectRadius = 10;                  //Default detection radius for regular troops (this will expand and contract based on weather, time of day, and how the undercover unit is acting - civilians within this radius will be under much more scrutinty)
 
 _asymEnySide = sideEmpty;               //Units of this side will be classed as asymetric enemies (Side: can be east, west, independent) - if you don't need this, use sideEmpty.
 _asymBarbaric = true;                   //(Bool - true or false) Will this side have a small chance of lashing out on civilians if it takes casualties and doesn't know the attacker?
 _asymDetectRadius = 15;                 //Default detection radius for asym troops (this will expand and contract based on weather, time of day, and how the undercover unit is acting - civilians within this radius will be under much more scrutinty)
 
-_globalSuspicionModifier = 1;           //Scales the level of suspicion of enemies. 1 is default, 2 means units are twice as likely to see through undercover unit's disguises, 0.5 means half as likely etc.
+_globalSuspicionModifier = suspicionMultiplier;           //Scales the level of suspicion of enemies. 1 is default, 2 means units are twice as likely to see through undercover unit's disguises, 0.5 means half as likely etc.
 
 //-------------------------Civilian Disguise settings-------------------------
 _civFactions = [(missionNameSpace getVariable "civFaction")]; //Array of factions whose vests are safe for undercover units to wear
@@ -108,7 +108,7 @@ Civilians will operate under similar restrictions to the player.
 You can also dismiss your new teammates and they will leave your group and carry on doing whatever it is they fancy doing (usually sitting cross-legged in the middle of a field).
 */
 
-_civRecruitEnabled = true;          //(Bool - true or false) Set this to false to prevent undercover units from recruiting civilians
+_civRecruitEnabled = (missionNamespace getVariable "recruitmentEnabled") == 1;          //(Bool - true or false) Set this to false to prevent undercover units from recruiting civilians
 _armedCivPercentage = 70;           //(Number - 0 to 100) Max percentage of civilians armed with weapons from the array below, either on their person or in their backpacks (will only work if _civRecruitEnabled is set to true, otherwise this is ignored)
 
 //Weapon classnames for armed civilians (array of classnames)

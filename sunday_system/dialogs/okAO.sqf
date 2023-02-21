@@ -45,6 +45,8 @@ diag_log format ["DRO: okAO.sqf: player %2 factionsChosen set to %1 and broadcas
 
 aiMultiplier = (round (((sliderPosition 2041)/10) * (10 ^ 1)) / (10 ^ 1));
 publicVariable "aiMultiplier";
+suspicionMultiplier = (round (((sliderPosition 2101)/10) * (10 ^ 1)) / (10 ^ 1));
+publicVariable "suspicionMultiplier";
 
 if (('FORTIFY' in preferredObjectives) || ('DISARM' in preferredObjectives) || ('PROTECTCIV' in preferredObjectives)) then {
 	neutralTasksChosen = true

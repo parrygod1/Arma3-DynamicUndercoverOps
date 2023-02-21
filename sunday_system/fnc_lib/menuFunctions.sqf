@@ -110,14 +110,19 @@ sun_switchLookup = {
 					_return pushBack ["ENABLED", "DISABLED"];					
 				};
 				case 2505: {
-					_return pushBack "hostileCivsEnabled";
-					_return pushBack hostileCivsEnabled;			
-					_return pushBack ["ENABLED", "DISABLED"];					
+					_return pushBack "areHostileCivsEnabled";
+					_return pushBack areHostileCivsEnabled;			
+					_return pushBack ["DISABLED", "ENABLED"];					
 				};
 				case 2510: {
 					_return pushBack "barbaricEnabled";
 					_return pushBack barbaricEnabled;			
-					_return pushBack ["ENABLED", "DISABLED"];					
+					_return pushBack ["DISABLED", "ENABLED"];					
+				};
+				case 2515: {
+					_return pushBack "recruitmentEnabled";
+					_return pushBack recruitmentEnabled;			
+					_return pushBack ["DISABLED", "ENABLED"];					
 				};
 			};			
 		};
@@ -622,7 +627,11 @@ dro_clearData = {
 	['MAIN', 3020, false, 0] call sun_switchButtonWeather;
 	["MAIN", 3030, 0] call sun_switchButtonSet;
 	["MAIN", 4010, 0] call sun_switchButtonSet;
+	["MAIN", 2505, 0] call sun_switchButton;
+	["MAIN", 2510, 0] call sun_switchButton;
+	["MAIN", 2515, 0] call sun_switchButton;
 	sliderSetPosition [2041, 1*10];
+	sliderSetPosition [2101, 1*10];
 	sliderSetPosition [2109, 3];
 	[2301] call dro_inputDaysData;	
 	
@@ -651,6 +660,8 @@ dro_clearData = {
 	profileNamespace setVariable ["DRO_playersFaction", nil];
 	profileNamespace setVariable ["DRO_enemyFaction", nil];
 	profileNamespace setVariable ['DRO_objectivePrefs', nil];
+	profileNamespace setVariable ["DRO_barbaricEnabled", nil];
+	profileNamespace setVariable ["DRO_areHostileCivsEnabled", nil];
 	
 	deleteMarker 'aoSelectMkr';
 	aoName = nil;	

@@ -36,10 +36,16 @@ customSupports = profileNamespace getVariable ["DRO_supportPrefs", []];
 publicVariable "customSupports";
 dynamicSim = profileNamespace getVariable ["DRO_dynamicSim", 0];
 publicVariable "dynamicSim";
+
 spawnMusicEnabled = profileNamespace getVariable ["DRO_spawnMusicEnabled", 0];
 publicVariable "spawnMusicEnabled";
-hostileCivsEnabled = profileNamespace getVariable ["DRO_hostileCivsEnabled", 1];
-publicVariable "hostileCivsEnabled";
+areHostileCivsEnabled = profileNamespace getVariable ["DRO_areHostileCivsEnabled", 1];
+publicVariable "areHostileCivsEnabled";
 barbaricEnabled = profileNamespace getVariable ["DRO_barbaricEnabled", 0];
 publicVariable "barbaricEnabled";
+recruitmentEnabled = profileNamespace getVariable ["DRO_recruitmentEnabled", 1];
+publicVariable "recruitmentEnabled";
+suspicionMultiplier = profileNamespace getVariable ["DRO_suspicionMultiplier", 1];
+publicVariable "suspicionMultiplier";
+
 diag_log "DRO: variables loaded from profile";
