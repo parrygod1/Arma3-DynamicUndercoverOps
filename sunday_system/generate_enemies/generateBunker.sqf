@@ -134,7 +134,12 @@ if (count (((AOLocations select _AOIndex) select 2) select 5) > 0) then {
 		_markerBunker setMarkerText "Bunker";			
 		_markerBunker setMarkerColor markerColorEnemy;
 		_markerBunker setMarkerAlpha 0;
-		enemyIntelMarkers pushBack _markerBunker;			
+		enemyIntelMarkers pushBack _markerBunker;
+
+		_trespassMarker = createMarker [format["INC_tre_%1", floor(random 10000)], _bunkerPos];
+		_trespassMarker setMarkerSize [15, 15];
+		_trespassMarker setMarkerShape "ELLIPSE";
+		_trespassMarker setMarkerAlpha 0;			
 		
 		travelPosPOIMil pushBack _bunkerPos;
 	};

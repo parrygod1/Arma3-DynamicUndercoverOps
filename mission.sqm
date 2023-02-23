@@ -8,11 +8,11 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1194;
+		nextID=1197;
 	};
 	class MarkerIDProvider
 	{
-		nextID=50;
+		nextID=53;
 	};
 	class LayerIndexProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14313.696,15.922679,13059.813};
-		dir[]={0.12915438,-0.486716,-0.86395985};
-		up[]={0.071960121,0.87356025,-0.48136699};
-		aside[]={-0.98900998,-3.7252903e-009,-0.14784828};
+		pos[]={14274.662,27.005304,13097.307};
+		dir[]={0.69197285,-0.17135842,-0.70129353};
+		up[]={0.12035562,0.98520851,-0.12197684};
+		aside[]={-0.71182239,3.7252903e-009,-0.70236164};
 	};
 };
 binarizationWanted=0;
-sourceName="DynamicGuerillaOps";
+sourceName="DynamicUndercoverOps";
 addons[]=
 {
 	"A3_Structures_F_EPA_Mil_Scrapyard",
@@ -125,11 +125,11 @@ dlcs[]=
 randomSeed=15722855;
 class ScenarioData
 {
-	author="mbrdmn";
-	overviewText="Perform recon operations around a random location";
+	author="parrygod";
+	overviewText="Perform recon and undercover operations around a random location";
 	overViewPicture="images\recon_image.jpg";
 	overViewPictureLocked="images\recon_image.jpg";
-	onLoadMission="Perform recon operations around a random location";
+	onLoadMission="Perform recon and undercover operations around a random location";
 	loadScreen="images\recon_image.jpg";
 	briefing=0;
 	aIKills=1;
@@ -326,8 +326,8 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Dynamic Recon Ops";
-		overviewText="Perform recon operations around a random location.";
+		briefingName="Dynamic Undercover Ops";
+		overviewText="Perform recon and undercover operations around a random location.";
 		resistanceWest=0;
 		startWeather=0.21619803;
 		startWind=0.099999994;

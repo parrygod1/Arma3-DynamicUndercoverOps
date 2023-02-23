@@ -37,13 +37,15 @@ if (!isNil "enemyIntelMarkers") then {
 };
 */
 
-[_object, _trespassMarker] spawn {
-	_object = _this select 0;
-	_trespassMarker = _this select 1;
-
-	while {alive _object && !(isNil _trespassMarker)} do {
-		sleep 1;
-		_trespassMarker setMarkerPos (getPos _object);
+if (!(isNil _trespassMarker)) then {
+	[_object, _trespassMarker] spawn {
+		_object = _this select 0;
+		_trespassMarker = _this select 1;
+	
+		while {alive _object} do {
+			sleep 1;
+			_trespassMarker setMarkerPos (getPos _object);
+		};
 	};
 };
 

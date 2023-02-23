@@ -199,7 +199,7 @@ class sundayDialog {
 				class welcomeText: sundayTextMT
 				{
 					idc = 1142;
-					text = "Dynamic Recon Ops is a randomised, replayable scenario that generates an enemy occupied area with a selection of tasks to complete within.\n\nYou can press the START button at the bottom right to immediately play a random scenario or use the arrow buttons above to scroll through the available customisation options.\n\nThanks for playing and have fun!";
+					text = "Dynamic Undercover Ops combines Dynamic Recon Ops and Icontinentia's undercover / civilian recruitment simulation to create a dynamic undercover scenario.\n\nDynamic Recon Ops is a randomised, replayable scenario that generates an enemy occupied area with a selection of tasks to complete within.\n\nYou can press the START button at the bottom right to immediately play a random scenario or use the arrow buttons above to scroll through the available customisation options.\n\nThanks for playing and have fun!";
 					x = "3 * pixelGridNoUIScale * pixelW";
 					y = "3 * pixelGridNoUIScale * pixelH";
 					w = "20 * pixelGridNoUIScale * pixelW";	
@@ -1064,7 +1064,7 @@ class sundayDialog {
 						class SwitchButton: sundaySelButton {
 							idc = 2509;
 							action = "['MAIN', 2505] call sun_switchButton";
-							tooltip = "When enabled, civilians have a chance of becoming hostile to players. They will not attack undercover players. 'Disabled' will completely disable this functionality.";
+							tooltip = "When enabled, civilians have a chance of becoming hostile to compromised players. 'Disabled' won't spawn any hostile civilians.";
 						};
 						
 					};		
@@ -1074,9 +1074,9 @@ class sundayDialog {
 					idc = 3715;
 					text = "Undercover";
 					x = "1 * pixelGridNoUIScale * pixelW";
-					y = "2 * pixelGridNoUIScale * pixelH";	
+					y = "7.5 * pixelGridNoUIScale * pixelH";	
 					w = "24 * pixelGridNoUIScale * pixelW";	
-					h = "12.5* pixelGridNoUIScale * pixelH";
+					h = "2* pixelGridNoUIScale * pixelH";
 				};
 				class BarbaricSwitchButton: RscControlsGroupNoScrollbars {
 					idc = 2510;	
@@ -1143,7 +1143,7 @@ class sundayDialog {
 					colorText[] = {0.75,0.75,0.75,1};
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					font = "PuristaMedium";
-					tooltip = "Allows you to fine tune the suspicion level of enemies. 1 is default, 0 won't disable everything (e.g. drawing your gun will blow your cover).";
+					tooltip = "Allows you to fine tune the suspicion level of enemies. 1 is default. This value determines how strict you have to behave to not be considered out of place.";
 				};
 				class sundaySliderSuspicion: sundaySlider
 				{

@@ -43,3 +43,7 @@ _markerC setMarkerSize [_sizeX / 2, _sizeY / 2];
 _markerC setMarkerBrush "Border";		
 _markerC setMarkerColor "ColorOrange";
 
+_trespassMarker = createMarker [format["INC_tre_%1", floor(random 10000)], [(_leftX + (_sizeX / 2)), (_bottomY + (_sizeY / 2))]];
+_trespassMarker setMarkerSize [50, 50];
+_trespassMarker setMarkerShape "ELLIPSE";
+_trespassMarker setMarkerAlpha 0;	

@@ -54,7 +54,7 @@ playMusic "LeadTrack01_F_Jets";
 player createDiarySubject ["dro", "Dynamic Recon Ops"];
 player createDiaryRecord ["dro", ["Dynamic Recon Ops", "
 	<font image='images\recon_image_collection.jpg' width='350' height='175'></font><br /><br />
-	Dynamic Recon Ops is a randomised, replayable scenario that generates an enemy occupied AO with a selection of tasks to complete within.
+	Dynamic Undercover Ops combines Dynamic Recon Ops and Icontinentia's undercover / civilian recruitment simulation to create a dynamic undercover scenario. Dynamic Recon Ops is a randomised, replayable scenario that generates an enemy occupied AO with a selection of tasks to complete within.
 	Select your AO location, the factions you want to use and any supports available or leave them all randomised and see what mission you are sent on.<br /><br />
 	Designed to be simple to use but with plenty of options to customise your mission setup, the objective behind DRO is to create a way to quickly get playing a new scenario in singleplayer or co-op. With as few changes to the base game as possible, DRO aims to showcase the unique and varied gameplay that Arma 3 has to offer for smaller scale infantry combat.<br /><br />
 	Additionally, DRO has been designed from the ground up to take advantage of faction mods. If you have any mods that create new factions they will be selectable as player or enemy sides within the mission. However, the scenario itself requires no mods apart from specific terrains if you want to use them.<br /><br />
@@ -367,7 +367,7 @@ cutText ["", "BLACK IN", 3];
 player createDiarySubject ["dro", "Dynamic Recon Ops"];
 player createDiaryRecord ["dro", ["Dynamic Recon Ops", "
 	<font image='images\recon_image_collection.jpg' width='350' height='175'></font><br /><br />
-	Dynamic Recon Ops is a randomised, replayable scenario that generates an enemy occupied AO with a selection of tasks to complete within.
+	Dynamic Undercover Ops combines Dynamic Recon Ops and Icontinentia's undercover / civilian recruitment simulation to create a dynamic undercover scenario. Dynamic Recon Ops is a randomised, replayable scenario that generates an enemy occupied AO with a selection of tasks to complete within.
 	Select your AO location, the factions you want to use and any supports available or leave them all randomised and see what mission you are sent on.<br /><br />
 	Designed to be simple to use but with plenty of options to customise your mission setup, the objective behind DRO is to create a way to quickly get playing a new scenario in singleplayer or co-op. With as few changes to the base game as possible, DRO aims to showcase the unique and varied gameplay that Arma 3 has to offer for smaller scale infantry combat.<br /><br />
 	Additionally, DRO has been designed from the ground up to take advantage of faction mods. If you have any mods that create new factions they will be selectable as player or enemy sides within the mission. However, the scenario itself requires no mods apart from specific terrains if you want to use them.<br /><br />

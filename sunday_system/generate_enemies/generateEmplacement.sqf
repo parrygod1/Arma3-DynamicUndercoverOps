@@ -40,4 +40,9 @@ if (count (((AOLocations select _AOIndex) select 2) select 4) > 0) then {
 	_markerEmplace setMarkerAlpha 0;
 	enemyIntelMarkers pushBack _markerEmplace;		
 	travelPosPOIMil pushBack _pos;
+
+	_trespassMarker = createMarker [format["INC_tre_%1", floor(random 10000)], _pos];
+		_trespassMarker setMarkerSize [15, 15];
+		_trespassMarker setMarkerShape "ELLIPSE";
+		_trespassMarker setMarkerAlpha 0;	
 };

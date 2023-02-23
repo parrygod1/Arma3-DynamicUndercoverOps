@@ -155,7 +155,7 @@ for "_i" from 1 to _numHousesToFill do {
 	{ 
 		_chance = 0.5;
 		for "_bp" from 1 to ((count _buildingPositions) min 3) step 1 do {
-			if (random 1 > _chance) then {			
+			if (random 1 > _chance && hostileCivsEnabled) then {			
 				[_x, false, [], false] call _createHostileCivUnit;	
 				_chance = _chance + 0.2;
 			};
